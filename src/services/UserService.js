@@ -42,12 +42,11 @@ export const logoutUser = async () => {
 }
 
 export const updateUser = async (id, data, access_token) => {
-  const res = await axiosJWT.put(`/user/update-user/${id}`, data, {
+  const res = await axiosClient.put(`/user/update-user/${id}`, data, {
     headers: {
       token: `Bearer ${access_token}`,
     }
   });
   return res.data;
 }
-  
-    
+
